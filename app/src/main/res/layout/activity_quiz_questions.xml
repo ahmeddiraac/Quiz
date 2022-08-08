@@ -6,63 +6,60 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".QuizQuestionsActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp"
-        >
+        android:padding="16dp">
+
         <TextView
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
+            android:textColor="@color/white"
             android:textSize="22sp"
-            android:textColor="#ff3555"
-            android:textStyle="bold"
-            tools:text="What country does this flag blong to ?"
-            />
+            tools:text="What country does this flag belong to?" />
 
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:contentDescription="Quiz Image"
+            android:contentDescription="image"
             tools:src="@drawable/yaman" />
 
         <LinearLayout
+            android:id="@+id/ll_progress_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            >
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ProgressBar
                 android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:max="6"
                 android:indeterminate="false"
+                android:max="6"
                 android:minHeight="50dp"
-                android:progress="5"
-                />
+                android:progress="0" />
+
             <TextView
                 android:id="@+id/tv_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="15dp"
+                android:textColorHint="#7A8089"
                 android:textSize="14sp"
-                android:text="0/9"
-
-                />
-
+                tools:text="0/10" />
         </LinearLayout>
 
         <TextView
@@ -73,55 +70,54 @@
             android:background="@drawable/defualt_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:text="wow"
-            android:textStyle="bold"
-            />
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Apple" />
 
         <TextView
             android:id="@+id/tv_option_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/defualt_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:text="wow"
-            android:textStyle="bold"
-            />
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Google" />
 
         <TextView
             android:id="@+id/tv_option_three"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/defualt_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:text="wow"
-            android:textStyle="bold"
-            />
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Android Inc." />
 
         <TextView
             android:id="@+id/tv_option_four"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/defualt_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:text="wow"
-            android:textStyle="bold"
-            />
-
-
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Nokia" />
 
         <Button
             android:id="@+id/btn_submit"
@@ -133,7 +129,5 @@
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
-
     </LinearLayout>
-
 </ScrollView>

@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/select_option_border_bg.xml" value="0.262" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_quiz_questions.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_result.xml" value="0.333786231884058" />
       </map>
     </option>
   </component>
@@ -18,5 +19,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

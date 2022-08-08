@@ -1,6 +1,7 @@
 package com.example.quiz
 
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -13,6 +14,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
 
     //Create global variables for the views in the layout
+
     private var progressBar: ProgressBar?=null
     private var tvProgress: TextView? = null
     private var tvQuestion:TextView? = null
@@ -22,6 +24,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var tvOptionThree:TextView? = null
     private var tvOptionFour:TextView? = null
     private var buttonSubmit: Button? = null
+    private var mUserName:String? = null
+    private var mCorrectAnswer:Int = 0
     /**
      * This function is auto created by Android when the Activity Class is created.
      */
@@ -45,6 +49,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         // This is used to align the xml view to this class
         setContentView(R.layout.activity_quiz_questions)
 
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
 
         progressBar=findViewById(R.id.progressbar)
         tvProgress = findViewById(R.id.tv_progress)
@@ -140,9 +145,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
                         }
                         else -> {
-
-                            Toast.makeText(this@QuizQuestionsActivity, "You have successfully completed the quiz. Your Score is : $mCorrectAnswers", Toast.LENGTH_SHORT).show()
-                        }
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME,mUserName)
+                            intent.putExtra(Constants.CORRECT_ANSWER,mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionsList?.size)
+                            startActivity(intent)
+                            finish()
+                                }
                     }
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
@@ -171,6 +180,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+
 
     /**
      * A function for answer view which is used to highlight the answer is wrong or right.
